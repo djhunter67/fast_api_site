@@ -7,9 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for('static', path='img/favicon.ico') }}">
     <meta http-equiv="Cache-Control" content="public">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style/index.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', path='js/index.js') }}" defer></script>
     <title>{% block title %}{% endblock %} - Fast-API Site</title>
-    {% block header %}{% endblock %}
+
+    <div class="header">
+        <div class="header-content">
+            <div class="header-content-right">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('fact') }}">Facts</a></li>
+                    <li><a href="{{ url_for('meme') }}">Meme</a></li>
+                    <li><a href="{{ url_for('stock') }}">Stock</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
 </head>
 
 <body>
@@ -19,8 +34,9 @@
 
     <div id="footer">
         {% block footer %}
-        &copy; Copyright 2022 by <a href="domain to-be-provided">myself</a>.
+
         {% endblock %}
+        &copy; Copyright 2022 by <a href="#">Hunter, Christerpher</a>.
     </div>
 </body>
 
