@@ -1,8 +1,10 @@
 from pathlib import Path
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Depends, status
+from fastapi.security import HTTPBearer
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from utils import VerifyToken
 
 app = FastAPI()
 
@@ -12,10 +14,35 @@ templates = Jinja2Templates(directory=str(ROOT / "templates"))
 
 app.mount("/static", StaticFiles(directory=str(ROOT / "static")), name="static")
 
+token_auth_scheme = HTTPBearer()
+
 
 @app.get("/")
 async def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+
+@app.get("/login")
+async def login(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+@app.get("/register")
+async def register(request: Request):
+    return templates.TemplateResponse("register.html", {"request": request})
+
+@app.get("/logout")
+async def logout(request: Request):
+    return templates.TemplateResponse("logout.html", {"request": request})
+
+@app.get("/personal")
+def private(request: Request, token: str = Depends(token_auth_scheme)):
+
+    result = VerifyToken(token.credentials).verify()
+
+    if result.get("status"):
+
+        request.status_code = status.HTTP_400_BAD_REQUEST
+
+    return result
 
 @app.get("/about")
 async def about(request: Request):

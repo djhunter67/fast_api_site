@@ -9,22 +9,40 @@
     <meta http-equiv="Cache-Control" content="public">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style/index.css') }}">
     <script type="text/javascript" src="{{ url_for('static', path='js/index.js') }}" defer></script>
-    <title>{% block title %}{% endblock %} - Fast-API Site</title>
+    <title class="title">{% block title %}{% endblock %} - Fast-API Site</title>
 
-    <div class="header">
-        <div class="header-content">
-            <div class="header-content-right">
-                <ul>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
-                    <li><a href="{{ url_for('fact') }}">Facts</a></li>
-                    <li><a href="{{ url_for('meme') }}">Meme</a></li>
-                    <li><a href="{{ url_for('stock') }}">Stock</a></li>
-                </ul>
+    <nav class="navbar">
+        <div class="container">
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{{ url_for('home') }}">
+                        Home
+                    </a>
+                    <a class="navbar-item" href="{{ url_for('about') }}">
+                        About
+                    </a>
+                    <a class="navbar-item" href="{{ url_for('fact') }}">
+                        Facts
+                    </a>
+                    <a class="navbar-item" href="{{ url_for('meme') }}">
+                        Meme
+                    </a>
+                    <a class="navbar-item" href="{{ url_for('stock') }}">
+                        Stock
+                    </a>
+                </div>
 
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-dark" href="{{ url_for('login') }}">Login/Register</a>
+                            <a class="button is-link" href="{{ url_for('logout') }}">Logout</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
 </head>
 
 <body>
@@ -32,12 +50,20 @@
         {% block content %}{% endblock %}
     </div>
 
-    <div id="footer">
-        {% block footer %}
+    <footer class="footer">
+        <div class="content has-text-centered">
 
-        {% endblock %}
-        &copy; Copyright 2022 by <a href="#">Hunter, Christerpher</a>.
-    </div>
+            {% block footer %}
+
+            {% endblock %}
+            &copy; Copyright 2022 by <a href="#">Hunter, Christerpher</a>.
+            <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
