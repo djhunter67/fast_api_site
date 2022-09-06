@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 from pathlib import Path
 from fastapi import FastAPI, Request, Depends, status
 from fastapi.security import HTTPBearer
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from utils import VerifyToken
+import site
 
 app = FastAPI()
 
@@ -36,7 +38,7 @@ async def logout(request: Request):
 @app.get("/personal")
 def private(request: Request, token: str = Depends(token_auth_scheme)):
 
-    result = VerifyToken(token.credentials).verify()
+    result = site.utils.VerifyToken(token.credentials).verify()
 
     if result.get("status"):
 
@@ -67,3 +69,8 @@ async def fact(request: Request):
 @app.get("/fact/{topic}", response_class=HTMLResponse)
 async def fact_topic(request: Request, topic: str):
     return templates.TemplateResponse("fact.html", {"request": request, "topic": topic})
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000, use_colors=True, workers=2)
