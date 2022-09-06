@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: fast_api_site
+    command: uvicorn main:app --host 0.0.0.0 --port 80 --reload --use-colors --reload-include * --workers 2
+    ports:
+      - 8000:80
+    volumes:
+      - .:/app
