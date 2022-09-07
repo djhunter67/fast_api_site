@@ -35,8 +35,7 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button is-dark" href="{{ url_for('login') }}">Login/Register</a>
-                            <a class="button is-link" href="{{ url_for('logout') }}">Logout</a>
+                            <a class="button is-warning" href="{{ url_for('contact') }}">Contact</a>
                         </div>
                     </div>
                 </div>
@@ -46,24 +45,25 @@
 </head>
 
 <body>
-    <div id="block">
+    <div class="container block">
         {% block content %}{% endblock %}
     </div>
-
-    <footer class="footer">
-        <div class="content has-text-centered">
-
-            {% block footer %}
-
-            {% endblock %}
-            &copy; Copyright 2022 by <a href="#">Hunter, Christerpher</a>.
-            <p>
-                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-            </p>
+    <div id="page-container">
+        <div id="content-wrap">
+            <footer class="" id="footer">
+                <div class="content has-text-centered">
+                   
+                    &copy; Copyright 2022 by <a href="#">Hunter, Christerpher</a>.
+                    <p>
+                        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+                        licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                    </p>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
 </body>
 
 </html>

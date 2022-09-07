@@ -5,132 +5,131 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<section class="hero is-large">
-
-    <img src="{{ url_for('static', path='img/Logo.png') }}" alt="Hunter logo">
-
+<section class="hero is-medium my-2 is-info">
+  <div class="hero-body">
+    <figure class="image is-large">
+      <img src="{{ url_for('static', path='img/Logo.png') }}" alt="Hunter logo">
+    </figure>
+  </div>
 </section>
 
 <div class="columns center">
-    <div class="column is-one-quarter">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="{{ url_for('static', path='img/IMG_7826.JPG') }}"
-                </figure>
-            </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="{{ url_for('static', path='img/IMG_7831.JPG') }}" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">John Smith</p>
-                        <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                </div>
-
-                <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-            </div>
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{ url_for('static', path='img/IMG_7826.JPG') }}" </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="{{ url_for('static', path='img/IMG_7831.JPG') }}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">John Smith</p>
+            <p class="subtitle is-6">@johnsmith</p>
+          </div>
         </div>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+          <a href="#">#css</a> <a href="#">#responsive</a>
+          <br>
+          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
     </div>
-    <div class="column is-one-quarter">
-        <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="{{ url_for('static', path='img/IMG_3403.JPG') }}"
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="{{ url_for('static', path='img/IMG_7833.JPG') }}" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
-          
-              <div class="content">
-                The idea in this card and the others like it is to convey a small amount of information regarding the image provided. <a>@Hunter</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              </div>
-            </div>
+  </div>
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{ url_for('static', path='img/IMG_3403.JPG') }}" </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="{{ url_for('static', path='img/IMG_7833.JPG') }}" alt="Placeholder image">
+            </figure>
           </div>
-    </div>
-    <div class="column is-one-quarter">
-        <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="{{ url_for('static', path='img/IMG_7828.JPG') }}"
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="{{ url_for('static', path='img/IMG_7834.JPG') }}" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
-          
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              </div>
-            </div>
+          <div class="media-content">
+            <p class="title is-4">John Smith</p>
+            <p class="subtitle is-6">@johnsmith</p>
           </div>
+        </div>
+
+        <div class="content">
+          The idea in this card and the others like it is to convey a small amount of information regarding the image
+          provided. <a>@Hunter</a>.
+          <a href="#">#css</a> <a href="#">#responsive</a>
+          <br>
+          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
     </div>
-    <div class="column is-one-quarter">
-        <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="{{ url_for('static', path='img/IMG_3416.JPG') }}"
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="{{ url_for('static', path='img/leo_bday.jpg') }}" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
-          
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              </div>
-            </div>
+  </div>
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{ url_for('static', path='img/IMG_7828.JPG') }}" </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="{{ url_for('static', path='img/IMG_7834.JPG') }}" alt="Placeholder image">
+            </figure>
           </div>
+          <div class="media-content">
+            <p class="title is-4">John Smith</p>
+            <p class="subtitle is-6">@johnsmith</p>
+          </div>
+        </div>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+          <a href="#">#css</a> <a href="#">#responsive</a>
+          <br>
+          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{ url_for('static', path='img/IMG_3416.JPG') }}" </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="{{ url_for('static', path='img/leo_bday.jpg') }}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">John Smith</p>
+            <p class="subtitle is-6">@johnsmith</p>
+          </div>
+        </div>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+          <a href="#">#css</a> <a href="#">#responsive</a>
+          <br>
+          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
